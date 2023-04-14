@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --color-white: #f7f7f7;
+  --color-black: #242333;
+  --color-grey: #444451;
+  --color-selected: #6feaf6;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-container {
+  margin: 20px 0;
+}
+
+.movie-container select {
+  background-color: var(--color-white);
+  border: none;
+  border-radius: 5px;
+  color: var(--color-black);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 5px 15px;
+  margin-left: 10px;
+}
+
+.movie-container select:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--color-selected);
+}
+
+.container {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.screen {
+  height: 70px;
+  width: 100%;
+  background-color: var(--color-white);
+  margin: 15px 0;
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  transform: rotateX(-45deg);
+}
+
+.showcase {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.showcase li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.showcase li small {
+  margin-left: 4px;
+}
+
+.showcase .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.row {
+  display: flex;
+}
+
+.seat {
+  background-color: var(--color-grey);
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: var(--color-selected);
+}
+
+.seat.occupied {
+  background-color: var(--color-white);
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+p.text {
+  margin: 5px 0;
+}
+
+p.text span {
+  color: var(--color-selected);
+}
